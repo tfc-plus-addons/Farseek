@@ -1,8 +1,8 @@
 package farseek
 
-import com.bioxx.tfc.Core.TFCTabs._
-import com.bioxx.tfc.Core.TFC_Core
-import com.bioxx.tfc.Core.TFC_Core._
+import com.dunk.tfc.Core.TFCTabs._
+import com.dunk.tfc.Core.TFC_Core
+import com.dunk.tfc.Core.TFC_Core._
 import farseek.util.ImplicitConversions._
 import farseek.util._
 import net.minecraft.block.Block._

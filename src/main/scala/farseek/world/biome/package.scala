@@ -1,7 +1,7 @@
 package farseek.world
 
-import com.bioxx.tfc.Core.TFC_Climate._
-import com.bioxx.tfc.Core.TFC_Core._
+import com.dunk.tfc.Core.TFC_Climate._
+import com.dunk.tfc.Core.TFC_Core._
 import farseek.block._
 import farseek.util.ImplicitConversions._
 import farseek.util._

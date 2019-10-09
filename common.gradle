@@ -10,7 +10,8 @@ def modId = modName.toLowerCase()
 apply plugin: "scala"
 apply plugin: "forge"
 minecraft {
-    version = forgeRevision
+    //version = forgeRevision
+    version = "1.7.10-10.13.4.1558-1.7.10"
     runDir = "run"
     // If testing standalone Farseek add JVM arg "-Dfml.coreMods.load=farseek.core.FarseekCoreMod" to Client/Server run configurations
 }
@@ -27,7 +28,7 @@ task addLibraryTransformers {
     }
 }
 
-def modAuthorList = [githubUser]
+def modAuthorList = ["devlr"]
 def modDependencyList = modDependencies.equals("")? []: modDependencies.split(";")
 def modOptionalDependencyList = modOptionalDependencies.equals("")? []: modOptionalDependencies.split(";")
 ext.writeJsonFile = { File dir, String name, Object contents ->
@@ -73,30 +74,3 @@ task deobfJar(type: Jar) {
 }
 
 tasks.jar.dependsOn(srcJar, deobfJar)
-
-// ---------------------------------------------------------------------------------------------------------------------
-// Release
-// ---------------------------------------------------------------------------------------------------------------------
-def releaseChangeLog = file("changelog.md").text + "Built using Forge revision $forgeRevision."
-
-if(project.hasProperty("githubApiKey")) {
-    apply plugin: "co.riiid.gradle"
-    github {
-        owner = githubUser
-        token = githubApiKey
-        repo = modName
-        targetCommitish = mcVersion
-        tagName = "v$version"
-        body = releaseChangeLog
-    }
-}
-
-if(project.hasProperty("curseForgeId")) {
-    apply plugin: "curseforge"
-    curse {
-        apiKey      = curseForgeApiKey
-        projectId   = curseForgeId
-        releaseType = curseForgeReleaseType
-        changelog   = releaseChangeLog
-    }
-}

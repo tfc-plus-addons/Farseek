@@ -1,7 +1,7 @@
 package farseek
 
-import com.bioxx.tfc.Blocks.Terrain.BlockCollapsible
-import com.bioxx.tfc.Core.TFC_Climate._
+import com.dunk.tfc.Blocks.Terrain.BlockCollapsible
+import com.dunk.tfc.Core.TFC_Climate._
 import farseek.block.{BlockAndData, _}
 import farseek.util.ImplicitConversions._
 import farseek.util.{XYZ, _}

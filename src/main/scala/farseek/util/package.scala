@@ -22,7 +22,7 @@ package object util {
     /** 3D coordinates (3-tuple of Ints) */
     type XYZ = (Int, Int, Int)
 
-    val tfcLoaded = getPackage("com.bioxx.tfc") != null
+    val tfcLoaded = getPackage("com.dunk.tfc") != null
 
     def unsupported: Nothing = throw new UnsupportedOperationException
 
